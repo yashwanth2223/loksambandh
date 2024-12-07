@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin Dashboard</title>
+<title>Admin </title>
 <!-- Add Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
@@ -93,12 +93,14 @@ h2 {
 </style>
 </head>
 <body>
-<h2 align="center">Admin Dashboard</h2>
+<h2 align="center">Admin portal</h2>
     <div class="navbar">
     <div class="nav-links">
         <a href="adminhome"><i class="fas fa-home"></i> Home</a>
         <a href="politicianreg"><i class="fas fa-user-tie"></i> Add Politician</a>
         <a href="viewallpoliticians"><i class="fa-regular fa-eye"></i> View Politician</a>
+         <a href="viewproblems1"><i class="fa-regular fa-eye"></i> View Problems</a>
+        
         </div>
         <div class="logout">
          <a href="adminlogout"><i class="fa-solid fa-power-off"></i></a>&nbsp;&nbsp;&nbsp;

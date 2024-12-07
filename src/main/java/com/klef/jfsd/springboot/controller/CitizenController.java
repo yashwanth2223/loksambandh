@@ -1,7 +1,6 @@
 package com.klef.jfsd.springboot.controller;
 
-import java.io.File;
-import java.io.IOException;
+
 import java.sql.Blob;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -210,6 +209,9 @@ public class CitizenController
 	    ModelAndView mv = new ModelAndView();
 	    
 	    try {
+	    	String name=request.getParameter("name");
+	    	String contact=request.getParameter("contact");
+	    	String constituency=request.getParameter("constituency");
 	        String title = request.getParameter("title");
 	        String content = request.getParameter("content");
 	        String status = "Pending";
@@ -218,6 +220,9 @@ public class CitizenController
 	        Blob image = new javax.sql.rowset.serial.SerialBlob(bytes);
 
 	        CitizenProblem p = new CitizenProblem();
+	        p.setName(name);
+	        p.setContactno(contact);
+	        p.setConstituency(constituency);
 	        p.setTitle(title);
 	        p.setContent(content);
 	        p.setImage(image);
@@ -279,6 +284,15 @@ public class CitizenController
 	 mv.addObject("message", "Email Sent Successfully");
 	 return mv;
 	 }
+	 
+	 
+	  @GetMapping("citnews")
+	  public ModelAndView citnews()
+	  {
+	    ModelAndView mv=new ModelAndView();
+	    mv.setViewName("citnews");
+	    return mv;
+	  }
 	
 	
 }

@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>loksambandh</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
@@ -17,7 +17,8 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #F7F9F2 0%, #c3cfe2 100%);
+            
         }
 
         .navbar {
@@ -82,6 +83,7 @@
        		color: black;
             text-decoration: blink;
             text-shadow: black;
+            font-family: sans-serif;
         
         }
 
@@ -364,18 +366,30 @@
 </div>
 
 
-<div class="news-press-releases">
+<div class="news-press-releases" align="center">
   <h2 align="center" >News</h2>
   <div class="news-item">
     <img src="resources/newsimg/ni1.jpg" alt="Inauguration of HCCB — Coca Cola Factory">
     <h3>Inauguration of HCCB — Coca Cola Factory</h3>
      <p>October 21, 2024<br>
+  </div>
+   <div class="news-item">
+    <img src="resources/newsimg/ni1.jpg" alt="Inauguration of HCCB — Coca Cola Factory">
+    <h3>Inauguration of HCCB — Coca Cola Factory</h3>
+     <p>October 21, 2024<br>
+  </div>
+  
      
     
     
-  </div>
   
   <div class="news-item">
+    <img src="resources/newsimg/ni2.jpeg" alt="Hon'ble CM participates in Police Flag Day Parade">
+    <h3>Hon'ble CM participates in Police Flag Day Parade</h3>
+    <p>October 21, 2024<br>
+   
+  </div>
+   <div class="news-item">
     <img src="resources/newsimg/ni2.jpeg" alt="Hon'ble CM participates in Police Flag Day Parade">
     <h3>Hon'ble CM participates in Police Flag Day Parade</h3>
     <p>October 21, 2024<br>

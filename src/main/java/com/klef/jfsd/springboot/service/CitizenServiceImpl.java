@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.klef.jfsd.springboot.model.Citizen;
 import com.klef.jfsd.springboot.model.CitizenProblem;
-import com.klef.jfsd.springboot.model.News;
+
 import com.klef.jfsd.springboot.repository.CitizenProblemRepository;
 import com.klef.jfsd.springboot.repository.CitizenRepository;
 

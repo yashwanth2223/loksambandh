@@ -104,8 +104,8 @@
         <div class="footer-section">
           <h6>Media</h6>
           <ul class="footer-links">
-            <li><a href="photogallery.jsp">Photo Gallery</a></li>
-            <br>
+            <li><a href="photogallery.jsp">Photo Gallery</a></li><br>
+            
             <a href="adminlogin">
               <i class="fa-sharp fa-solid fa-user-tie"></i>
               <span>Admin Panel</span>
@@ -121,7 +121,7 @@
             <li><a href="#">Contact Us</a></li>
             <li><a href="faq's.jsp">FAQ's</a></li>
             <li><a href="policies.jsp">Privacy Policy</a></li>
-            <li><a href="t&c.jsp">Terms & Conditions</a></li>
+            <li><a href="t&c.jsp">Terms and Conditions</a></li>
           </ul>
         </div>
         <div class="footer-section">

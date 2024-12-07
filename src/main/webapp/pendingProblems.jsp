@@ -4,7 +4,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>View Problems</title>
+    <title>Pending Citizens Problems</title>
+  
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -37,13 +38,6 @@
             text-transform: uppercase;
             font-weight: 600;
         }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        tr:hover {
-            background-color: #e6f2ff;
-            transition: background-color 0.3s ease;
-        }
         .problem-count {
             text-align: center;
             margin-bottom: 15px;
@@ -59,34 +53,40 @@
     </style>
 </head>
 <body>
-    <%@include file="adminnavbar.jsp" %> 
-    <h3><u>View Problems</u></h3>
+    <%@include file="politiciannavbar.jsp" %>
+    <br><br><br><br><br>
+    <h3><u>Pending Problems</u></h3>
+    
     <div class="problem-count">
-        Total Problems: <c:out value="${count}"/>
+        Total Problems Problems: <c:out value="${count}"/>
     </div>
+    
     <table>
         <tr>
-			<th>S.no</th>            
-        	<th>NAME</th>
-        	<th>CONTACT</th>
-        	<th>CONSTITUENCY</th>
+            <th>S.No</th>
+            <th>NAME</th>
+            <th>CONTACT</th>
+            <th>CONSTITUENCY</th>
             <th>TITLE</th>
             <th>CONTENT</th>
             <th>IMAGE</th>
+            <th>STATUS</th>
         </tr>
         <c:forEach items="${cplist}" var="cp">
         <tr>
-			<td><c:out value="${cp.id}"/></td>            
-        	<td><c:out value="${cp.name}"/></td>
+            <td><c:out value="${cp.id}"/></td>
+            <td><c:out value="${cp.name}"/></td>
             <td><c:out value="${cp.contactno}"/></td>
             <td><c:out value="${cp.constituency}"/></td>
             <td><c:out value="${cp.title}"/></td>
             <td><c:out value="${cp.content}"/></td>
+            <td<c:out value="${cp.status}"/>></td>
             <td>
-                <img src='displayprobimage?id=${cp.id}' alt="Problem Image"> 
+                <img src='displayprobsimage?id=${cp.id}' alt="Problem Image">
             </td>
         </tr>
         </c:forEach>
     </table>
 </body>
+<%@include file="footer.jsp"%>
 </html>

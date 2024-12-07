@@ -2,7 +2,7 @@ package com.klef.jfsd.springboot.service;
 
 import com.klef.jfsd.springboot.model.Citizen;
 import com.klef.jfsd.springboot.model.CitizenProblem;
-import com.klef.jfsd.springboot.model.News;
+
 
 public interface CitizenService 
 {

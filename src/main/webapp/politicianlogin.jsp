@@ -239,7 +239,9 @@
             <i class="fab fa-google"></i> Sign in with Google
         </button>
     </div>
+    
 </div>
+
 
 
 <script>

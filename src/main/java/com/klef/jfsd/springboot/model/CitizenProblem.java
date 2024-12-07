@@ -27,6 +27,13 @@ public class CitizenProblem
 	 
 	@Column(name="status",nullable = false)
 	private String status;
+	
+	@Column(name="name",nullable = false,length=50)
+	private String name;
+	@Column(name="contactno",nullable = false)
+	private String contactno;
+	@Column(name="constituency",length=50, nullable = false)
+	private String constituency;
 	public int getId() {
 		return id;
 	}
@@ -56,5 +63,23 @@ public class CitizenProblem
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getContactno() {
+		return contactno;
+	}
+	public void setContactno(String contactno) {
+		this.contactno = contactno;
+	}
+	public String getConstituency() {
+		return constituency;
+	}
+	public void setConstituency(String constituency) {
+		this.constituency = constituency;
 	}
 }

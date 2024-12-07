@@ -15,6 +15,7 @@ if (currentPolitician == null) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Politician Communication</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -153,8 +154,19 @@ h3 {
     color: #3498db;
     width: 20px;
 }
+footer {
+     background-color: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
 </style>
 <body>
+<%@include file="politiciannavbar.jsp" %>
+<br>
+<br>
+
     <h3>Politician Communication</h3>
 
     <form action="filterPoliticians" method="get" class="filter-form">
@@ -201,4 +213,5 @@ h3 {
         </c:forEach>
     </div>
 </body>
+<%@include file="footer.jsp"%>
 </html>

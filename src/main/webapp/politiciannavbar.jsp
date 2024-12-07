@@ -1,3 +1,18 @@
+<%@ page import="com.klef.jfsd.springboot.model.Politician" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<%
+    Politician pin = (Politician) session.getAttribute("politician");
+    if (pin == null) {
+        response.sendRedirect("politiciansessionexpiry");
+        return;
+    }
+    
+    
+   
+   
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,14 +104,16 @@
 </head>
 <body>
     <nav class="navbar">
-        <h1>Politician Dashboard</h1>
+    
+         <h1><%= pin.getName() %> Dashboard</h1>
         <div class="nav-links">
             <a href="politicianhome"><i class="fas fa-home"></i> Home</a>
         <a href="updatepolitician"><i class="fas fa-user-edit"></i> Update</a>
         <a href="postnews"><i class="fas fa-newspaper"></i> Post News</a>
+         <a href="viewposts"><i class="fas fa-newspaper"></i> View News</a>
         
         
-        <a href="politicianlogout">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="politicianlogout"><i class="fa-solid fa-power-off"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
          
         </div>
     </nav>

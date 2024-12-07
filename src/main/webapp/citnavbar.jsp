@@ -116,9 +116,10 @@
     <!-- Navbar Section -->
     <div class="navbar">
         <a href="cithome"><i class="fas fa-home"></i> Home</a>
-        <a href="citcontactus"><i class="fas fa-envelope"></i> Contact Us</a>
+        <a href="citcontactus"><i class="fa-solid fa-phone"></i> Contact Us</a>
         <a href="citprofile"><i class="fas fa-address-card"></i> Profile</a>
-        <a href="citproblems"><i class="fas fa-address-card"></i> Post your Problem</a>
+        <a href="citproblems"><i class="fa-regular fa-hand"></i> Post your Problem</a>
+        <a href="citnews"><i class="fa-solid fa-newspaper"></i> News</a>
         <a href="citlogout"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 

@@ -8,11 +8,7 @@
         response.sendRedirect("politiciansessionexpiry");
         return;
     }
-    
-    
-   
-   
-%>
+ %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,7 +116,10 @@
         .problem-list {
             max-height: 400px;
             overflow-y: auto;
+            
         }
+        
+        
 
         .problem-item {
             padding: 15px;
@@ -295,9 +294,10 @@
             <a href="politicianhome"><i class="fas fa-home"></i> Home</a>
         <a href="updatepolitician"><i class="fas fa-user-edit"></i> Update</a>
         <a href="postnews"><i class="fas fa-newspaper"></i> Post News</a>
+        <a href="viewposts"><i class="fas fa-newspaper"></i> View News</a>
         
         
-            <a href="politicianlogout"><i class="fa-solid fa-power-off"></i> Logout</a>&nbsp;&nbsp;&nbsp;&nbsp
+            <a href="politicianlogout"><i class="fa-solid fa-power-off"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </nav>
 
@@ -309,10 +309,11 @@
             </div>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">0
-                    
+                    <div class="stat-number">
+                    0
                     </div>
-                    <div class="stat-label">Total Problems</div>
+                    <div class="stat-label">Problems Received</div>
+                     
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">0</div>
@@ -359,22 +360,22 @@
         <!-- Add News Section -->
         <section class="dashboard-card">
             <div class="card-header">
-                <h2>Add News</h2>
+                <h2>Post News</h2>
             </div>
-            <form class="news-form">
+            <form class="news-form" action="insertnews" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="news-title">Title</label>
-                    <input type="text" id="news-title" required placeholder="Enter news title">
+                    <label for="title">Title:</label>
+    				<input type="text" id="title" name="title" required>
                 </div>
                 <div class="form-group">
-                    <label for="news-content">Content</label>
-                    <textarea id="news-content" required placeholder="Enter news content"></textarea>
+                    <label for="content">Content:</label>
+    				<textarea id="content" name="content" rows="4" cols="50" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="news-image">Image (Optional)</label>
-                    <input type="file" id="news-image" accept="image/*">
+                     <label for="image">Upload Image:</label>
+  					  <input type="file" id="image" name="image" accept="image/*">
                 </div>
-                <button type="submit" class="submit-btn">Post News</button>
+                <button type="submit" value="post" class="submit-btn">Post News</button>
             </form>
         </section>
         
@@ -386,10 +387,12 @@
             <div class="problem-list">
             <a href="/politicians"><i class="fas fa-newspaper"></i>View your peer</a>
             <br>
-            <a href="viewproblems"><i class="fas fa-newspaper"></i>View Problems</a>
+            <a href="viewcitproblem"><i class="fas fa-newspaper"></i>View Problems</a>
+            <br>
+            <a href="polchart.jsp"><i class="fas fa-newspaper"></i>Graph</a>
+            </div>
              
                 
-            </div>
             
         </section>
     </main>

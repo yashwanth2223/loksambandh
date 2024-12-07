@@ -151,6 +151,16 @@ input[type=reset]:hover {
        
    <h2>Post Problems</h2>
     <form action="insertproblem" method="post" enctype="multipart/form-data">
+    
+    	<label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter the name">
+        
+        <label for="contact">Contact</label>
+        <input type="text" id="contact" name="contact" required placeholder="Contact">
+        
+         <label for="constituency">Constituency</label>
+        <input type="text" id="constituency" name="constituency" required placeholder="Constituency">
+    
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required placeholder="Enter the title of your problem">
 

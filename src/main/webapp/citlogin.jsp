@@ -2,28 +2,37 @@
 <html>
 <head>
     <title>Citizen Login</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-    
-     * {
+        
+        
+         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0; /* Removed padding from body to avoid unnecessary space */
-        min-height: 100vh; /* Minimum height to fill the viewport */
-        display: flex;
-        flex-direction: column; /* Set up a column layout */
-    }
-    
-    
-    
-    .navbar {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #A6AEBF;
+            color: #333;
+        }
+
+        h4 {
+            color: #004080;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+ h3 {
+            color: #004080;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .navbar {
             background-color: #1a237e;
             padding: 1rem 2rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -57,242 +66,147 @@
             font-size: 1.2rem;
         }
 
-        .main-content {
-            flex: 1;
-            padding-top: 100px; /* Space for fixed navbar */
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 120px 20px 40px;
-        }
-
-        h4 {
-            color: red;
-            text-align: center;
-        }
-
-        h3 {
-            text-align: center;
-            color: #333;
-        }
-
         .container {
-        flex: 1; /* Allow the container to grow and fill the available space */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-    }
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            display: block;
+            max-width: 100px;
+            margin: 0 auto 20px;
+        }
 
         .form-container {
-            max-width: 400px; /* Set a max width for the form */
-            margin-left: 20px; /* Space between image and form */
-            background-color: white; /* White background for form */
-            padding: 20px; /* Padding around the form */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-align: center;
         }
 
-        img {
-            max-width: 300px; /* Set maximum width for image */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 8px; /* Rounded corners for image */
+        .form-container h3 {
+            color: #004080;
+            margin-bottom: 20px;
         }
 
         table {
-            width: 100%; /* Full width for table */
+            width: 100%;
+            border-collapse: collapse;
         }
 
-        label {
-            display: block; /* Block display for labels */
-            margin-bottom: 5px; /* Space below labels */
-            font-weight: bold; /* Bold labels */
+        table td {
+            padding: 10px;
         }
 
-        input[type="email"],
-        input[type="password"] {
-            width: calc(100% - 20px); /* Full width minus padding */
-            padding: 10px; /* Padding inside inputs */
-            border-radius: 5px; /* Rounded corners for inputs */
-            border: 1px solid #ccc; /* Light border */
-            margin-bottom: 15px; /* Space below inputs */
+        table td:first-child {
+            text-align: right;
+            font-weight: bold;
+            width: 30%;
         }
 
-        .button-container {
-            text-align: center; /* Center buttons */
+        table td:last-child {
+            width: 70%;
         }
 
-        input[type="submit"],
-        input[type="reset"] {
-            background-color: #007BFF; /* Primary button color */
-            color: white; /* Text color for buttons */
-            padding: 10px 15px; /* Padding inside buttons */
-            border: none; /* Remove border */
-            border-radius: 5px; /* Rounded corners for buttons */
-            cursor: pointer; /* Pointer cursor on hover */
-            margin-right: 10px; /* Space between buttons */
+        input[type="email"], input[type="password"], input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
-        input[type="submit"]:hover,
-        input[type="reset"]:hover {
-            background-color: #0056b3; /* Darker shade on hover for submit button */
-        }
-
-       
-
-        @media (max-width: 600px) {
-            .container {
-                flex-direction: column; /* Stack items vertically on small screens */
-                align-items: flex-start; /* Align items to start on small screens */
-                margin-top: 10px;
-            }
-            
-            .form-container {
-                width: 90%; /* Full width on smaller screens */
-                margin-left: 0; /* Remove left margin on small screens */
-                padding: 15px; /* Adjust padding for smaller screens */
-                box-shadow: none; /* Remove shadow on smaller screens for simplicity */
-                border-radius: 0; /* Remove rounded corners on small screens for simplicity */ 
-                background-color:#f9f9f9;
-                border :1px solid #ccc;
-                
-             }
-             
-             img {
-                 max-width :90%; 
-             }
-             
-           
-             
-             h3{
-                 font-size :18px;
-             }
-             
-             h4{
-                 font-size :14px;
-             }
-             
-             label{
-                 font-size :14px;
-             }
-             
-             input[type="email"],
-             input[type="password"]{
-                 font-size :14px;
-             }
-             
-             input[type="submit"],
-             input[type="reset"]{
-                 font-size :14px;
-             }
-         }
-         
-         footer {
-    text-align: center; /* Align all footer text to the center */
-    padding: 20px; /* Add some spacing inside the footer */
-    background-color: #2c2f77; /* Ensure the footer background is distinct */
-    color: white; /* Keep the text color consistent */
-    font-size: 14px; /* Adjust font size for readability */
-}
-  .popup-footer {
-        margin-top: 20px;
-        font-size: 0.9rem;
-    }
-
-    .popup-footer a {
-        color: #1a237e;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .popup-footer a:hover {
-        text-decoration: underline;
-    } 
-    
-    .captcha-container {
-            margin-top: 15px;
-            margin-bottom: 15px;
+        .captcha-container {
+            text-align: left;
         }
 
         .captcha-box {
-            background: #f0f2f5;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            font-family: 'Courier New', Courier, monospace;
-            letter-spacing: 5px;
-            text-align: center;
-            user-select: none;
-            position: relative;
-            overflow: hidden;
-            color: #1a237e;
+            background: #e6e6e6;
+            font-size: 18px;
             font-weight: bold;
+            text-align: center;
+            padding: 8px 10px;
             margin-bottom: 10px;
-        }
-
-        .captcha-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, 
-                transparent 25%, 
-                rgba(0,0,0,0.05) 25%, 
-                rgba(0,0,0,0.05) 50%, 
-                transparent 50%, 
-                transparent 75%, 
-                rgba(0,0,0,0.05) 75%);
-            background-size: 4px 4px;
-            pointer-events: none;
         }
 
         .captcha-input {
             display: flex;
-            gap: 10px;
             align-items: center;
-        }
-
-        .captcha-input input {
-            flex-grow: 1;
-        }
-
-        .refresh-captcha {
-            background: none;
-            border: none;
-            color: #1a237e;
-            cursor: pointer;
-            padding: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .refresh-captcha:hover {
-            transform: rotate(180deg);
+            gap: 10px;
         }
 
         .captcha-error {
             color: red;
-            font-size: 0.9rem;
-            margin-top: 5px;
+            font-size: 12px;
             display: none;
+            margin-top: 5px;
         }
 
-        @media (max-width: 600px) {
-            .captcha-box {
-                font-size: 1rem;
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #004080;
+            color: #fff;
+        }
+
+        input[type="reset"] {
+            background-color: #ccc;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003366;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #b3b3b3;
+        }
+
+        .popup-footer {
+            margin-top: 10px;
+        }
+
+        .popup-footer a {
+            color: #004080;
+            text-decoration: none;
+        }
+
+        .popup-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 15px;
             }
-        }           
-             
-             
+
+            table td:first-child {
+                text-align: left;
+                font-size: 14px;
+            }
+
+            table td:last-child {
+                width: 100%;
+            }
+
+            .navbar a {
+                font-size: 14px;
+                margin: 0 10px;
+            }
+        }
     </style>
 </head>
 <body>
-   
-   <h4 align="center">
-      <c:out value="${message}"></c:out>
-   </h4>
-   <nav class="navbar">
+    <h4 align="center">
+        <c:out value="${message}"></c:out>
+    </h4>
+    <nav class="navbar">
         <a href="/">
             <i class="fa-solid fa-house"></i>
             <span>Home</span>
@@ -304,96 +218,85 @@
         <a href="politicianlogin">
             <i class="fas fa-user-tie"></i>
             <span>Politician</span>
-        </a>	
+        </a>
     </nav>
-  
-   <div class="container">
-       <img src="login.png" alt="Login Image">
-      
-       <div class="form-container">
-        <h3>Citizen Portal</h3>
-           <form method="post" action="checkcitlogin" onsubmit="return validateForm()">
-               <table>
-                   <tr>
-                       <td><label for="email"></label></td>
-                       <td><input type="email" id="email" name="email" placeholder="Email" required/></td>
-                   </tr>
-                   <tr>
-                       <td><label for="password"></label></td>
-                       <td><input type="password" id="password" name="password" placeholder="Password" required/></td>
-                   </tr>
-                   <tr>
-                       <td colspan="2">
-                           <div class="captcha-container">
-                               <label for="captcha"></label>
-                               <div class="captcha-box" id="captchaBox"></div>
-                               <div class="captcha-input">
-                                   <input 
-                                       type="text" 
-                                       id="captchaInput" 
-                                       name="captcha" 
-                                       required 
-                                       placeholder="Enter CAPTCHA"
-                                       autocomplete="off"
-                                   />
-                                   <button type="button" class="refresh-captcha" onclick="generateCaptcha()">
-                                       <i class="fas fa-sync-alt"></i>
-                                   </button>
-                               </div>
-                               <div class="captcha-error" id="captchaError">
-                                   Invalid CAPTCHA. Please try again.
-                               </div>
-                           </div>
-                       </td>
-                   </tr>
-                   <tr>
-                       <td colspan="2" class="button-container">
-                           <input type="submit" value="Login"/>
-                           <input type="reset" value="Clear" onclick="generateCaptcha()"/>
-                       </td>
-                   </tr>
-               </table>
-              
+    <br><br><br>
+     <h3>Citizen Portal</h3>
+
+    <div class="container">
+        <img src="login.png" alt="Login Image">
+        <div class="form-container">
+           
+            <form method="post" action="checkcitlogin" onsubmit="return validateForm()">
+                <table>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" id="email" name="email" placeholder="Email" required/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" id="password" name="password" placeholder="Password" required/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="captcha-container">
+                                <label for="captcha"></label>
+                                <div class="captcha-box" id="captchaBox"></div>
+                                <div class="captcha-input">
+                                    <input type="text" id="captchaInput" name="captcha" required placeholder="Enter CAPTCHA" autocomplete="off"/>
+                                    <button type="button" class="refresh-captcha" onclick="generateCaptcha()">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="captcha-error" id="captchaError">
+                                    Invalid CAPTCHA. Please try again.
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="button-container">
+                            <input type="submit" value="Login"/>
+                            <input type="reset" value="Clear" onclick="generateCaptcha()"/>
+                        </td>
+                    </tr>
+                </table>
                 <div class="popup-footer" align="center">
-                    <a href="#">Forget Password?</a>
+                    <a href="#">Forgot Password?</a>
                 </div>
-           </form>
-       </div>
-   </div>
+            </form>
+        </div>
+    </div>
 
-   <script>
-       let captchaText = '';
+     <script>
+     let captchaText = '';
 
-       function generateCaptcha() {
-           const chars = '0123';
-           captchaText = '';
-           
-           for (let i = 0; i < 6; i++) {
-               captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
-           }
-           
-           document.getElementById('captchaBox').textContent = captchaText;
-           document.getElementById('captchaInput').value = '';
-           document.getElementById('captchaError').style.display = 'none';
-       }
+     function generateCaptcha() {
+         const chars = '01234';
+         captchaText = '';
+         for (let i = 0; i < 6; i++) {
+             captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+         }
+         document.getElementById('captchaBox').textContent = captchaText;
+         document.getElementById('captchaInput').value = '';
+         document.getElementById('captchaError').style.display = 'none';
+     }
 
-       function validateForm() {
-           const userInput = document.getElementById('captchaInput').value;
-           const errorElement = document.getElementById('captchaError');
-           
-           if (userInput === captchaText) {
-               errorElement.style.display = 'none';
-               return true;
-           } else {
-               errorElement.style.display = 'block';
-               generateCaptcha();
-               return false;
-           }
-       }
+     function validateForm() {
+         const userInput = document.getElementById('captchaInput').value;
+         const errorElement = document.getElementById('captchaError');
+         if (userInput === captchaText) {
+             errorElement.style.display = 'none';
+             return true;
+         } else {
+             errorElement.style.display = 'block';
+             generateCaptcha();
+             return false;
+         }
+     }
 
-       // Generate initial CAPTCHA when page loads
-       document.addEventListener('DOMContentLoaded', generateCaptcha);
-   </script>
+     document.addEventListener('DOMContentLoaded', generateCaptcha);
+     </script>
 </body>
 <%@include file="footer.jsp"%>
 </html>

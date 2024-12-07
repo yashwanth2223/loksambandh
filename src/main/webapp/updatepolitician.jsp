@@ -17,56 +17,22 @@ return;
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 
-	* {
+	 * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-   body 
-   {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 20px;
-     min-height: 100vh;
-}
+   	body 
+   		{
+    		font-family: Arial, sans-serif;
+    		background-color: #f2f2f2;
+    		margin: 0;
+    		padding: 20px;
+     		min-height: 100vh;
+		}
 
- .navbar {
-            background: #2c3e50;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
 
-        .navbar h1 {
-            color: white;
-            font-size: 1.5em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.1);
-        }
         
          .main-content {
             margin-top: 80px;
@@ -209,22 +175,12 @@ input[type="reset"]:hover {
 </style>
 </head>
 <body>
-    
+<%@include file="politiciannavbar.jsp" %>    
 <h4>
     <c:out value="${message}"></c:out>
 </h4>
 
- <nav class="navbar">
-        <h1>Dashboard</h1>
-        <div class="nav-links">
-            <a href="politicianhome"><i class="fas fa-home"></i> Home</a>
-        <a href="updatepolitician"><i class="fas fa-user-edit"></i> Update</a>
-        <a href="postnews"><i class="fas fa-newspaper"></i> Post News</a>
-        
-        
-            <a href="politicianlogout"><i class="fa-solid fa-power-off"></i> Logout</a>&nbsp;&nbsp;&nbsp;&nbsp
-        </div>
-    </nav>
+
 
 <h3>Update My Profile</h3>
 <div class="form-container">
@@ -263,15 +219,7 @@ input[type="reset"]:hover {
         </table>
     </form>
 </div>
-<footer>
-        <p>&copy; 2024 loksambandh. All Rights Reserved.Last updated on November 15, 2024.</p>
-        <div class="footer-links">
-            <a href="">Terms & Conditions</a> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="">Policies</a>	&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="">FAQ's</a>	&nbsp;&nbsp;&nbsp;&nbsp;	
-            <a href="">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-        
-    </footer>
+
 </body>
+<%@include file="footer.jsp"%>
 </html>

@@ -1,213 +1,182 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Registration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
+        /* General Styles */
+        
+         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
         }
 
         h3 {
-            color: #240750;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            text-align: center;
+            margin-top: 20px;
+            color: #181C14; /* Dark blue for government-like tone */
+            font-family: sans-serif;
+        }
+        
+         h5 {
+            text-align: center;
+            margin-top: 20px;
+            color: blue; /* Dark blue for government-like tone */
+            font-family: sans-serif;
         }
 
-        h3 u {
-            text-decoration: none;
-            border-bottom: 4px solid #ffffff;
-            padding-bottom: 5px;
-        }
-
-        .form-container {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        /* Navbar Styles */
+         .navbar {
+            background-color: #1a237e;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
             width: 100%;
-            max-width: 700px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .form-container::before {
-            content: '';
-            position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, #667eea, #764ba2);
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .navbar i {
+            font-size: 1.2rem;
+        }
+
+        /* Form Container Styles */
+        .form-container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         table {
             width: 100%;
+            border-collapse: collapse;
         }
 
-        tr {
-            margin-bottom: 20px;
-            display: block;
+        table td {
+            padding: 10px 15px;
+            vertical-align: middle;
         }
 
-        td {
-            padding: 8px 0;
+        table td:first-child {
+            text-align: right;
+            font-weight: bold;
         }
 
         label {
-            color: #4a5568;
-            font-weight: 500;
-            font-size: 15px;
-            display: block;
-            margin-bottom: 8px;
+            display: inline-block;
+            margin-bottom: 5px;
         }
 
-        input[type="text"],
-        input[type="password"],
-        input[type="number"],
-        input[type="date"],
-        input[type="cmail"] {
+        input[type="text"], input[type="date"], input[type="cmail"],
+        input[type="password"], input[type="number"] {
             width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            background-color: #f8fafc;
-        }
-
-        input[type="text"]:focus,
-        input[type="password"]:focus,
-        input[type="number"]:focus,
-        input[type="date"]:focus,
-        input[type="cmail"]:focus {
-            border-color: #667eea;
-            outline: none;
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.1);
-            background-color: white;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
 
         .radio-group {
             display: flex;
-            gap: 20px;
             align-items: center;
-            padding: 10px 0;
-        }
-
-        input[type="radio"] {
-            margin-right: 5px;
-            cursor: pointer;
-        }
-
-        input[type="radio"] + label {
-            display: inline-block;
-            margin: 0;
-            cursor: pointer;
+            gap: 15px;
         }
 
         .button-container {
             text-align: center;
-            padding-top: 20px;
         }
 
-        input[type="submit"],
-        input[type="reset"] {
-            padding: 12px 30px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 25px;
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
             font-size: 16px;
-            font-weight: 500;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin: 10px 5px;
         }
 
         input[type="submit"] {
-            background: #667eea;
-            color: white;
+            background-color: #004080;
+            color: #fff;
         }
 
         input[type="reset"] {
-            background: #fc8181;
-            color: white;
+            background-color: #ccc;
         }
 
         input[type="submit"]:hover {
-            background: #5a67d8;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            background-color: #003366;
         }
 
         input[type="reset"]:hover {
-            background: #f56565;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(252, 129, 129, 0.4);
+            background-color: #b3b3b3;
         }
-
-        .login-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 25px;
-            padding: 12px 25px;
-            background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .login-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            background: #f8fafc;
-        }
-
-        /* Custom styling for number input */
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .form-container {
-                padding: 20px;
-            }
-
-            h3 {
-                font-size: 2em;
-            }
-
-            input[type="submit"],
-            input[type="reset"] {
-                width: 100%;
-                margin: 10px 0;
-            }
-        }
+        
+        .error-message {
+   			 margin-top: 5px;
+    		display: block;
+    		color: red;
+    		font-size: 12px;
+}
+		input:invalid {
+    		border: 1px solid red;
+}
+        
     </style>
 </head>
 <body>
-    <h3><u>Registration</u></h3>
+    <nav class="navbar">
+        <a href="/">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="citlogin">
+            <i class="fas fa-users"></i>
+            <span>Citizen</span>
+        </a>
+        <a href="politicianlogin">
+            <i class="fas fa-user-tie"></i>
+            <span>Politician</span>
+        </a>
+    </nav>
+    <br><br><br><br><br>
+    
+    <h3>loksambandh</h3>
+    <h5>Create your free account now</h5>
     <div class="form-container">
         <form method="post" action="insertcit">
             <table>
@@ -255,9 +224,8 @@
             </table>
         </form>
     </div>
+    <%@include file="footer.jsp"%>
+    <script src="resources/script/citreg.js"></script>
     
-    <a href="/" class="login-link">
-        <i class="fa-solid fa-backward"></i>Back
-    </a>
 </body>
 </html>

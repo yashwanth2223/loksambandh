@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <html>
 <head>
 <title>Post News</title>
@@ -191,14 +192,52 @@ small {
         font-size: 2rem;
     }
     
-    .news-container {
-        grid-template-columns: 1fr;
+     .news-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 10px;
+    }
+
+    .news-card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+        width: 300px;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    .news-card h4 {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #333;
+    }
+
+    .news-card img.news-image {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+        border-radius: 8px;
+    }
+
+    .news-card p {
+        font-size: 14px;
+        color: #555;
+        margin: 8px 0;
+    }
+
+    .news-card p small {
+        color: #888;
     }
 }
 </style>
 </head>
 <body>
 <%@include file="politiciannavbar.jsp" %>
+<br>
+<br>
 
 <form action="insertnews" method="post" enctype="multipart/form-data">
     <h2>News Article</h2>
@@ -217,21 +256,8 @@ small {
     </div>
 </form>
 
-<div class="previous-news">
-    <h3>Previous News</h3>
-    <div class="news-container">
-        <div class="news-card">
-            <h4>Sample News Title 1</h4>
-            <img src="sample-image1.jpg" alt="News Image">
-            <p><small>Posted on November 15, 2024</small></p>
-        </div>
-        <div class="news-card">
-            <h4>Sample News Title 2</h4>
-            <img src="sample-image2.jpg" alt="News Image">
-            <p><small>Posted on November 14, 2024</small></p>
-        </div>
-    </div>
-</div>
+
 
 </body>
+<%@include file="footer.jsp"%>
 </html>
