@@ -1,9 +1,11 @@
 package com.klef.jfsd.springboot.controller;
 
-
 import java.sql.Blob;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.klef.jfsd.springboot.model.Citizen;
 import com.klef.jfsd.springboot.model.CitizenProblem;
+import com.klef.jfsd.springboot.model.News;
 import com.klef.jfsd.springboot.service.CitizenService;
 
 import jakarta.mail.internet.MimeMessage;
@@ -209,24 +212,25 @@ public class CitizenController
 	    ModelAndView mv = new ModelAndView();
 	    
 	    try {
-	    	String name=request.getParameter("name");
-	    	String contact=request.getParameter("contact");
-	    	String constituency=request.getParameter("constituency");
 	        String title = request.getParameter("title");
 	        String content = request.getParameter("content");
+	        String name=request.getParameter("name");
+	    	String contact=request.getParameter("contact");
+	    	String constituency=request.getParameter("constituency");
 	        String status = "Pending";
 	        
 	        byte[] bytes = file.getBytes();
 	        Blob image = new javax.sql.rowset.serial.SerialBlob(bytes);
 
 	        CitizenProblem p = new CitizenProblem();
-	        p.setName(name);
-	        p.setContactno(contact);
-	        p.setConstituency(constituency);
 	        p.setTitle(title);
 	        p.setContent(content);
 	        p.setImage(image);
 	        p.setStatus(status);
+	        p.setName(name);
+	        p.setContactno(contact);
+	        p.setConstituency(constituency);
+	        
 	        
 	        msg = citizenService.PostProblem(p);
 	        System.out.println(msg);
@@ -284,15 +288,28 @@ public class CitizenController
 	 mv.addObject("message", "Email Sent Successfully");
 	 return mv;
 	 }
-	 
-	 
-	  @GetMapping("citnews")
-	  public ModelAndView citnews()
-	  {
-	    ModelAndView mv=new ModelAndView();
-	    mv.setViewName("citnews");
-	    return mv;
-	  }
 	
+	 @GetMapping("citnews")
+	    public ModelAndView viewposts()
+	    {
+	    	ModelAndView mv = new ModelAndView();
+	    	List<News> newlist = citizenService.viewposts();
+	    	mv.setViewName("citnews");
+	    	mv.addObject("newlist", newlist);
+	    	
+	    	long count = citizenService.newcount();
+	    	mv.addObject("count", count);
+	    	return mv;
+	    }
+	    
+	    @GetMapping("viewdisimage11")
+	    public ResponseEntity<byte[]> viewdisimage(@RequestParam int id) throws Exception
+	    {
+	    	News nw = citizenService.viewPostsById(id);
+	    	
+	    	byte[] imgebyte = null;
+	    	imgebyte = nw.getImage().getBytes(1, (int) nw.getImage().length());
+	    	return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imgebyte);
+	    }
 	
 }
