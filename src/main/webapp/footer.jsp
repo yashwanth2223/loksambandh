@@ -104,7 +104,7 @@
         <div class="footer-section">
           <h6>Media</h6>
           <ul class="footer-links">
-            <li><a href="photogallery.jsp">Photo Gallery</a></li><br>
+            <li><a href="photogallery.jsp">Photo Gallery</a></li>
             
             <a href="adminlogin">
               <i class="fa-sharp fa-solid fa-user-tie"></i>

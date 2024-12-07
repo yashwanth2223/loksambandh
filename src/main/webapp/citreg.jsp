@@ -201,7 +201,7 @@
                 </tr>
                 <tr>
                     <td><label for="cemail">Enter Email ID</label></td>
-                    <td><input type="cmail" id="cemail" name="cemail" required placeholder="example@email.com"/></td>
+                    <td><input type="email" id="cemail" name="cemail" required placeholder="example@email.com"/></td>
                 </tr>
                 <tr>
                     <td><label for="cpwd">Enter Password</label></td>

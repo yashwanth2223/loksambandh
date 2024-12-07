@@ -348,7 +348,7 @@
             </div>
             <div class="gallery-section">
                 <h2>Video Gallery</h2>
-                <iframe src="https://www.youtube.com/embed/sample-video" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/sample-video" ></iframe>
                 <a href="#" class="view-all">View all</a>
             </div>
         </div>

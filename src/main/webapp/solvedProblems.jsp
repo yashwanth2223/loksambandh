@@ -54,7 +54,7 @@
 <body>
     <%@include file="politiciannavbar.jsp" %>
     <br><br><br><br><br>
-    <h3><u>Solved Problems</u></h3>
+    <h3>Solved Problems</h3>
     
     <div class="problem-count">
         Total Solved Problems: <c:out value="${count}"/>

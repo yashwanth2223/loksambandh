@@ -345,7 +345,7 @@
     </style>
 </head>
 <body>
-    <video autoplay muted loop playsinline class="video-background">
+    <video autoplay muted loop  class="video-background">
         <source src="adminbgv.mp4" type="video/mp4">
         
     </video>
@@ -354,7 +354,7 @@
         <a href="/" class="login-link">
             <i class="fa-solid fa-backward"></i>Back
         </a>
-        <h3><u>Admin Portal</u></h3>
+        <h3>Admin Portal</h3>
         <div class="form-container">
             <form method="post" action="checkadminlogin" onsubmit="return validateForm()">
                 <div class="input-group">
