@@ -99,6 +99,7 @@ h2 {
         <a href="adminhome"><i class="fas fa-home"></i> Home</a>
         <a href="politicianreg"><i class="fas fa-user-tie"></i> Add Politician</a>
         <a href="viewallpoliticians"><i class="fa-regular fa-eye"></i> View Politician</a>
+        <a href="deletepoli"><i class="fa-regular fa-eye"></i> Delete Politician</a>
          <a href="viewproblems1"><i class="fa-regular fa-eye"></i> View Problems</a>
         
         </div>
